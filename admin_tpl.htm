@@ -1,0 +1,60 @@
+<style type="text/css">
+
+.stats{}
+.stats DT{ font-weight: bold; }
+.stats DD{ font-style:italic; border-bottom: 1px dashed #E1E1E1;}
+
+</style>
+<script type="text/javascript">
+function valida()
+{
+	var parent = document.getElementById("parent_post").value;
+	var post = document.getElementById("post").value;
+	
+	if( parent == 0 || post == 0 )
+	{
+		alert("Please select the posts!");
+	}
+	else
+	{
+		document.getElementById("form_custom_posts").submit();
+	}
+}
+</script>
+{UPDATED}
+<div class="wrap" id="bbuinfo_config">
+  <h2>Create your Custom Post Type Tree</h2>
+  <form name="mpp_config_form" id="form_custom_posts" method="post">
+  {ERROS}  
+
+  <table width="75%" border="0" cellpadding="0" cellspacing="0">
+  	<tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><strong>Parent Post:</strong></td>
+    </tr>
+    <tr>
+      <td>{PARENT_POSTS}</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><strong>Post:</strong></td>
+    </tr>
+    <tr>
+      <td>{POSTS}</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><input value="Add" name="bbuinfo_config_submit" type="button" onclick="valida();" style="cursor:pointer;"/></td>
+    </tr>
+  </table>
+  <br>
+  <h3>Custom Post Type Trees:</h3>
+ 		{TREE}
+  </form>
+</div>
